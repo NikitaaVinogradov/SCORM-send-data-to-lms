@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script language="JavaScript1.2" src="../scormdriver/scormdriver.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum quia cupiditate illum mollitia aliquam, omnis facere assumenda numquam fugiat. Vel voluptas dicta, possimus enim atque eligendi perferendis voluptatum reiciendis.</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum quia cupiditate illum mollitia aliquam, omnis facere assumenda numquam fugiat. Vel voluptas dicta, possimus enim atque eligendi perferendis voluptatum reiciendis.</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum quia cupiditate illum mollitia aliquam, omnis facere assumenda numquam fugiat. Vel voluptas dicta, possimus enim atque eligendi perferendis voluptatum reiciendis.</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum quia cupiditate illum mollitia aliquam, omnis facere assumenda numquam fugiat. Vel voluptas dicta, possimus enim atque eligendi perferendis voluptatum reiciendis.</p>
+    <button id="btn">Send Data</button>
+    <script type="text/javascript">
+        function Dindon() {
+            try {
+                SCORM_CallLMSInitialize();
+            } catch {
+                console.log('SCORM_CallLMSInitialize');
+            }
+            
+            try {
+                SCORM_SetCompleted();
+            } catch {
+                console.log('SCORM_SetCompleted');
+            }
+
+            try {
+                SCORM_SetPassed();
+            } catch {
+                console.log('SCORM_SetPassed');
+            }
+        }	
+
+        btn.onclick = function() {
+            Dindon();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script language="JavaScript1.2" src="scormdriver.js"></script>
+	<script language="JavaScript1.2">
+			strContentLocation = "../scormcontent/index.html";  //Put the link to the start of the content here.
+
+			function LoadContent(){
+				//check for bookmark
+				var bookmark = GetBookmark();
+
+				if (bookmark != "") {
+					//if there is a bookmark, then go to that page
+					window.scormdriver_content.document.location.href = "../scormcontent/" + bookmark;
+				}
+				else {
+					//if not, go to the start page
+					window.scormdriver_content.document.location.href = strContentLocation;
+				}
+			}
+		</script>
+	</head>
+	<!-- Don't change the names of these frames below. Doing so may break functionality -->
+	<frameset rows="100%,0%,0%,0%" onload="Start()" onbeforeunload="Unload()" onunload="Unload()">
+		<frame frameborder="0" name="scormdriver_content" src="blank.html">
+		<frame frameborder="0" name="AICCComm" src="AICCComm.html">
+		<frame frameborder="0" name="rusticisoftware_aicc_results" src="blank.html">
+		<frame frameborder="0" name="NothingFrame" src="blank.html">
+	</frameset>
+	<!-- <noframes>
+		Your browser must be able to view frames for this content to display.
+	</noframes> -->
+</html>
