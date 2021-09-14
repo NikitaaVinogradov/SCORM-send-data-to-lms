@@ -16,7 +16,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum quia cupiditate illum mollitia aliquam, omnis facere assumenda numquam fugiat. Vel voluptas dicta, possimus enim atque eligendi perferendis voluptatum reiciendis.</p>
     <button id="btn">Send Data</button>
     <script type="text/javascript">
-        function Dindon() {
+        function btnClick() {
             try {
                 SCORM_CallLMSInitialize();
             } catch {
@@ -34,10 +34,16 @@
             } catch {
                 console.log('SCORM_SetPassed');
             }
+            
+            try {
+                SCORM_SetScore(77,100,0);
+            } catch {
+                console.log('SCORM_SetScore');
+            }
         }	
 
         btn.onclick = function() {
-            Dindon();
+            btnClick();
         };
     </script>
 </body>
